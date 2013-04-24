@@ -1,24 +1,32 @@
 
 
-  <div class="right">
+
     <div id="branding"></div>
     <div id="content">
       <div class="limiter">
 
         <div id="about">
-          <img style='float:left;' src='img/logo_retina.png' width='49' height'39' />
+          <img style='float:left;' src='/assets/logo_retina.png' alt='logo' width='49' height='39' />
           <h1 class='map-title'></h1>
           <p class='description'></p>
           <div id="markerfilters" class="clearfix section">
             <a class="markerfilter selected" href="#all">All</a>
           </div>
         </div>
+           <!-- geocoder -->
+
+        <div data-control='geocode' data-map="map" class="clearfix section" id="search">
+            <form class="geocode">
+            <input placeholder='Search for an address' type="text">
+            <input type='submit' />
+            <div id='geocode-error'></div>
+          </form>
+        </div>
 
       </div>
     </div>
     <div id="map" class="map"></div>
+    <script src="/assets/script.js"></script>
+<!--this is where we'll set varia ble to data, run script to do stuff with data-->
 
-    <script src="script.js"></script>
-
-</div>
 

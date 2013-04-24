@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License:none (public domain)
  */
@@ -203,7 +203,7 @@ a.zoomer {
   padding: 15px !important;
   margin-bottom: 5px;
   }
-  .wax-intip::before { 
+  .wax-intip::before {
     border-width: 17px !important;
     margin-left: -17px !important;
     }
@@ -438,7 +438,7 @@ a.zoomer {
 
 strong { font-weight:bold; }
 
-/* marker styling */ 
+/* marker styling */
 .simplestyle-marker {
 	width: 30;
 	height: 70;

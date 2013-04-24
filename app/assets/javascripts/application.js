@@ -11,5 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require_tree .
+//= require mapbox.jquery
+//= require mapbox.jquery.geocoder
+//= require mapbox.share
+
+

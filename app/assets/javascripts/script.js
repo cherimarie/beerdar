@@ -2,38 +2,29 @@
 $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson) {
 
     map.setZoomRange(10, 19);
-    //test Friday morning 
+    //test Friday morning
     var markerLayer = mapbox.markers.layer();
     mapbox.markers.interaction(markerLayer);
- 
 
-      markerLayer.features({
-        geometry: {coordinates: [-122.52, 47.6]},
-        properties: {'marker-color': '#000',
-      				'marker-size': "medium",
-          			'marker-symbol': "bus",
-          			title: 'Bar One',
-          			description: 'Happy Hour blah blah.'}
-    }, {geometry: {coordinates: [-122.32, 47.9]},
-              properties: {'marker-color': '#000',
-      				'marker-size': "medium",
-          			'marker-symbol': "bus",
-          			title: 'Bar Two',
-          			description: 'Happy Hour cha cha cha.'}
-    }).
-    markerLayer.factory(function(f) {
-    // Define a new factory function. This takes a GeoJSON object
-    // as its input and returns an element - in this case an image -
-    // that represents the point.
-        var img = document.createElement('img');
-        img.className = 'marker-image';
-        img.setAttribute('src', f.properties.image);
-        img.style.pointerEvents = 'all';
-        return img;
-    });
-
-     map.addLayer(markerLayer)
+ markerLayer.add_feature({
+      geometry: {coordinates: [-122.32, 47.61]},
+      properties: {'marker-color': '#000',
+                    'marker-size': "medium",
+                    'marker-symbol': "bus",
+                    title: 'Bar One',
+                    description: 'Happy Hour blah blah.'}
+  });
+   markerLayer.add_feature({
+    geometry: {coordinates: [-122.4, 47.5]},
+      properties: {'marker-color': '#000',
+                    'marker-size': "medium",
+                    'marker-symbol': "bus",
+                    title: 'Bar Two',
+                    description: 'Happy Hour c.'}
+  });
+    map.addLayer(markerLayer)
         .setExtent(markerLayer.extent());
+
 
     // Add share control
     mapbox.share().map(map).add();
