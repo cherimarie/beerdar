@@ -15,12 +15,20 @@ $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson) {
                     description: 'Happy Hour blah blah.'}
   });
    markerLayer.add_feature({
-    geometry: {coordinates: [-122.4, 47.5]},
+    geometry: {coordinates: [-122.4, 47.58]},
       properties: {'marker-color': '#000',
                     'marker-size': "medium",
                     'marker-symbol': "bus",
                     title: 'Bar Two',
                     description: 'Happy Hour c.'}
+  });
+    markerLayer.add_feature({
+  geometry: {coordinates: [-122.38, 47.55]},
+    properties: {'marker-color': '#000',
+                  'marker-size': "medium",
+                  'marker-symbol': "bus",
+                  title: 'Bar Three',
+                  description: 'Happy Hour rulezzzz'}
   });
     map.addLayer(markerLayer)
         .setExtent(markerLayer.extent());

@@ -110,7 +110,7 @@ body > div {
 
 #branding img {
   float: left;
-  padding: 5px;
+  padding: 3px;
 }
 
 #map-title {
@@ -122,7 +122,7 @@ body > div {
   top:0px;
   right:0;
   bottom:0;
-  width:279px;
+  width:150px;
   background:rgb(255,255,255);
   background:rgba(255,255,255, 0.9);
   border-left:1px solid #ccc;
@@ -132,7 +132,7 @@ body > div {
 }
 
 .section {
-  width: 249px;
+  width: 125px;
   margin-bottom: 20px;
   background: #ececec;
   border-radius: 5px;
@@ -207,7 +207,7 @@ form.geocode.loading input[type=submit] {
 }
 a.zoomer {
   position: absolute;
-  top: 10px;
+  top: 40px;
 }
 
 .wax-tooltip {
