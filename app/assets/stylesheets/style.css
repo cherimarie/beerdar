@@ -98,6 +98,25 @@ body > div {
   z-index:0;
 }
 
+#branding {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  background-color: white;
+  padding: 3px;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+
+#branding img {
+  float: left;
+  padding: 5px;
+}
+
+#map-title {
+
+}
+
 #content {
   position:absolute;
   top:0px;
