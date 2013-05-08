@@ -1,2 +1,3 @@
 log/development.log
-tmp/*
+tmp/**/*
+tmp/cache/assets/D5A/EA0/sprockets%2Fd771ace226fc8215a3572e0aa35bb0d6
