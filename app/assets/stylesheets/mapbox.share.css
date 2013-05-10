@@ -38,7 +38,7 @@
 
  .share {
   clear:left;
-  left:10px;
+  /*left:10px; this line negated the change below. no idea why left pos was declared twice.*/
   top:10px;
   width:57px;
   height:18px;
@@ -52,8 +52,8 @@
   border-radius: 3px;
   color:#fff;
   position: absolute;
-  left: 11px;
-  top: 45px;
+  right: 15px;
+  top: 50px;
   }
 
 

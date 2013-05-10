@@ -1,29 +1,38 @@
 // Create and load map
-$('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson) {
+$('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
+{
 
     map.setZoomRange(10, 19);
-    //test Friday morning
     var markerLayer = mapbox.markers.layer();
     mapbox.markers.interaction(markerLayer);
 
- markerLayer.add_feature({
-      geometry: {coordinates: [-122.32, 47.61]},
-      properties: {'marker-color': '#000',
-                    'marker-size': "medium",
-                    'marker-symbol': "bus",
-                    title: 'Bar One',
-                    description: 'Happy Hour blah blah.'}
-  });
-   markerLayer.add_feature({
-    geometry: {coordinates: [-122.4, 47.5]},
-      properties: {'marker-color': '#000',
-                    'marker-size': "medium",
-                    'marker-symbol': "bus",
-                    title: 'Bar Two',
-                    description: 'Happy Hour c.'}
-  });
+    markerLayer.add_feature({
+    geometry: {coordinates: [-122.32, 47.61]},
+    properties: {'marker-color': '#000',
+                  'marker-size': "medium",
+                  'marker-symbol': "bus",
+                  title: 'Bar One',
+                  description: 'Happy Hour blah blah.'}
+    });
+    markerLayer.add_feature({
+    geometry: {coordinates: [-122.4, 47.58]},
+    properties: {'marker-color': '#000',
+                  'marker-size': "medium",
+                  'marker-symbol': "bus",
+                  title: 'Bar Two',
+                  description: 'Happy Hour c.'}
+    });
+    markerLayer.add_feature({
+    geometry: {coordinates: [-122.38, 47.55]},
+    properties: {'marker-color': '#000',
+                'marker-size': "medium",
+                'marker-symbol': "bus",
+                title: 'Bar Three',
+                description: 'Happy Hour rulezzzz'}
+    });
+
     map.addLayer(markerLayer)
-        .setExtent(markerLayer.extent());
+      .setExtent(markerLayer.extent());
 
 
     // Add share control

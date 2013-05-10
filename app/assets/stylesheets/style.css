@@ -98,22 +98,57 @@ body > div {
   z-index:0;
 }
 
-#content {
-  position:absolute;
+#branding {
+  position: absolute;
   top:0px;
-  right:0;
-  bottom:0;
-  width:279px;
-  background:rgb(255,255,255);
-  background:rgba(255,255,255, 0.9);
-  border-left:1px solid #ccc;
+  width: 100%;
+  background-color: white;
+  padding: 3px;
   overflow-x:hidden;
   overflow-y:auto;
+  height: 7%;
+}
+
+#branding-left{
+  width: 8%;
+  float: left;
+  padding: 3px;
+}
+
+#branding-center {
+  text-align: center;
+  width:80%;
+  float: left;
+  padding: 3px;
+}
+
+#branding-right {
+  width: 8%;
+  float: left;
+  padding: 3px;
+}
+
+#map-title {
+
+}
+
+#content {
+  position:absolute;
+  top:80%;
+  right:0;
+  left:0;
+  bottom:0;
+  width:100%;
+  background:rgb(255,255,255);
+  background:rgba(255,255,255, 0.9);
+  border-top:1px solid #ccc;
+  overflow-x:hidden;
+  overflow-y:hidden;
   padding:20px;
 }
 
 .section {
-  width: 249px;
+  width: 125px;
   margin-bottom: 20px;
   background: #ececec;
   border-radius: 5px;
@@ -188,7 +223,8 @@ form.geocode.loading input[type=submit] {
 }
 a.zoomer {
   position: absolute;
-  top: 10px;
+  top: 45px;
+
 }
 
 .wax-tooltip {
@@ -473,7 +509,7 @@ strong { font-weight:bold; }
   /* make transparent link selection, adjust last value opacity 0 to 1.0 */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   }
-
+/*
 @media only screen and (max-device-width: 480px) {
   .map {
       bottom:auto !important;
@@ -482,8 +518,10 @@ strong { font-weight:bold; }
   #content {
     border-left:0 !important;
     border-top:1px solid #ccc;
-    top:200px !important;
+    top:80% !important;
     overflow-y:visible !important;
     }
 
   }
+  commented out because mobile-friendly design is now default for all devices
+  */
