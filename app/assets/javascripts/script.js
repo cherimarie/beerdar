@@ -1,9 +1,13 @@
-// Create and load map
-
 window.onload = function()
 {
   getGeoLocation();
+
 }
+
+var lati;
+var lngi;
+
+
   function getGeoLocation() {
     navigator.geolocation.getCurrentPosition(setGeoCookie);
   }
@@ -11,12 +15,16 @@ window.onload = function()
   function setGeoCookie(position) {
     var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
     document.cookie = "lat_lng=" + escape(cookie_val);
+    lati = position.coords.latitude;
+    lngi = position.coords.longitude;
 
     //just to show results
     var latdump = document.getElementById("latlng");
     latdump.innerHTML = "your location: " + cookie_val;
   }
 
+
+// Create and load map
 $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
 {
     map.setZoomRange(10, 19);
@@ -46,6 +54,14 @@ $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
                 'marker-symbol': "bus",
                 title: 'Bar Three',
                 description: 'Happy Hour rulezzzz'}
+    });
+   markerLayer.add_feature({
+    geometry: {coordinates: [-122.321, 47.624]},
+    properties: {'marker-color': '#E01B6A',
+                'marker-size': "medium",
+                'marker-symbol': "bus",
+                title: 'You',
+                description: 'Here you are.'}
     });
 
     map.addLayer(markerLayer)
