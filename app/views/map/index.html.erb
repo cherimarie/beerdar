@@ -1,5 +1,9 @@
 
-
+<%- unless @lat_lng %>
+  <script>
+    getGeoLocation();
+  </script>
+<%- end %>
 
     <div id="branding">
        <div id="branding-left">
@@ -9,6 +13,7 @@
       <div id="branding-center">
       <!--  <img src='/assets/slime.png' alt='slime' height='20' /> -->
         <h1 class='map-title'></h1>
+          <p id="latlng">11</p>
       </div>
 
        <div id="branding-right">

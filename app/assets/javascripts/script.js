@@ -1,7 +1,24 @@
 // Create and load map
+
+window.onload = function()
+{
+  getGeoLocation();
+}
+  function getGeoLocation() {
+    navigator.geolocation.getCurrentPosition(setGeoCookie);
+  }
+
+  function setGeoCookie(position) {
+    var cookie_val = position.coords.latitude + "|" + position.coords.longitude;
+    document.cookie = "lat_lng=" + escape(cookie_val);
+
+    //just to show results
+    var latdump = document.getElementById("latlng");
+    latdump.innerHTML = "your location: " + cookie_val;
+  }
+
 $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
 {
-
     map.setZoomRange(10, 19);
     var markerLayer = mapbox.markers.layer();
     mapbox.markers.interaction(markerLayer);
