@@ -1,12 +1,13 @@
-window.onload = function()
+// Create and load map
+$('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
 {
-  getGeoLocation();
+  var lati;
+  var lngi;
 
-}
-
-var lati;
-var lngi;
-
+  window.onload = function()
+  {
+    getGeoLocation();
+  }
 
   function getGeoLocation() {
     navigator.geolocation.getCurrentPosition(setGeoCookie);
@@ -20,13 +21,9 @@ var lngi;
 
     //just to show results
     var latdump = document.getElementById("latlng");
-    latdump.innerHTML = "your location: " + cookie_val;
+    latdump.innerHTML = "your location: " + lati + lngi;
   }
 
-
-// Create and load map
-$('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
-{
     map.setZoomRange(10, 19);
     var markerLayer = mapbox.markers.layer();
     mapbox.markers.interaction(markerLayer);
@@ -56,7 +53,7 @@ $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
                 description: 'Happy Hour rulezzzz'}
     });
    markerLayer.add_feature({
-    geometry: {coordinates: [-122.321, 47.624]},
+    geometry: {coordinates: [lngi, lati]},
     properties: {'marker-color': '#E01B6A',
                 'marker-size': "medium",
                 'marker-symbol': "bus",
