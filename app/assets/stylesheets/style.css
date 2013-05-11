@@ -503,7 +503,10 @@ strong { font-weight:bold; }
 /* touch tweaks */
 
 * {
-  -webkit-overflow-scrolling: touch;
+  /* turning this off for now to try overflow.js */
+  /*-webkit-overflow-scrolling: touch;*/
+
+
   /* prevent callout when holding tap on links (the native dialog that comes up) */
   -webkit-touch-callout:none;
 

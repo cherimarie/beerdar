@@ -5,7 +5,7 @@ class MapController < ApplicationController
 
   private
     def get_user_location
-      return @lat_lng if @lat_lng
+      #return @lat_lng if @lat_lng
       if cookies[:lat_lng]
         lat_lng = cookies[:lat_lng].split("|").map(&:to_f)
       elsif request.location
