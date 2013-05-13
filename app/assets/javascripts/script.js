@@ -1,6 +1,3 @@
-// Create and load map
-$('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
-{
   var lati;
   var lngi;
 
@@ -20,10 +17,14 @@ $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
     lngi = position.coords.longitude;
 
     //just to show results
+
     var latdump = document.getElementById("latlng");
     latdump.innerHTML = "your location: " + lati + lngi;
-  }
+  // Create and load map
+$('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
+{
 
+    alert(lati);
     map.setZoomRange(10, 19);
     var markerLayer = mapbox.markers.layer();
     mapbox.markers.interaction(markerLayer);
@@ -59,6 +60,7 @@ $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
                 'marker-symbol': "bus",
                 title: 'You',
                 description: 'Here you are.'}
+
     });
 
     map.addLayer(markerLayer)
@@ -101,3 +103,4 @@ $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
         return false;
     }
 });
+}
