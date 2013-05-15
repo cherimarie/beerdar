@@ -14,5 +14,6 @@
 //= require mapbox.jquery
 //= require mapbox.jquery.geocoder
 //= require mapbox.share
+//= require mapbox.uncompressed
 
 
