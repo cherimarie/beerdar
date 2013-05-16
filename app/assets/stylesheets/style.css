@@ -503,6 +503,11 @@ strong { font-weight:bold; }
 
 /* touch tweaks */
 
+#map:first-child{
+  z-index: 0;
+  overflow: scroll;
+}
+
 * {
   /* turning this off for now to try overflow.js */
   /*-webkit-overflow-scrolling: touch;*/

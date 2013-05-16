@@ -3,6 +3,9 @@ class MapController < ApplicationController
     @lat_lng = get_user_location
   end
 
+  def edit
+  end
+
   private
     def get_user_location
       #return @lat_lng if @lat_lng

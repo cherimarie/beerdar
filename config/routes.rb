@@ -1,5 +1,6 @@
 Beerdar::Application.routes.draw do
   get "map/index"
+  get "map/edit"
   root :to => 'map#index'
 
 
