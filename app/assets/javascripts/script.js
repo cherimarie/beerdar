@@ -17,8 +17,8 @@
     lngi = position.coords.longitude;
 
     //just to show results
-    var latdump = document.getElementById("latlng");
-    latdump.innerHTML = "your location: " + lati + lngi;
+   // var latdump = document.getElementById("latlng");
+    //latdump.innerHTML = "your location: " + lati + lngi;
 
     // Create and load map
     $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
@@ -28,39 +28,39 @@
         var markerLayer = mapbox.markers.layer();
         mapbox.markers.interaction(markerLayer);
 
+       markerLayer.add_feature({
+        geometry: {coordinates: [lngi, lati]},
+        properties: {'marker-color': '#EB843F',
+                    'marker-size': "medium",
+                    'marker-symbol': "pitch",
+                    title: 'You',
+                    description: 'Here you are.'}
+
+        });
+
+       //rails needs to run db query, send close results to here
+       //then function runs through, creating markers
+
+
         markerLayer.add_feature({
         geometry: {coordinates: [-122.32, 47.61]},
-        properties: {'marker-color': '#000',
+        properties: {'marker-color': '#3FCBF2',
                       'marker-size': "medium",
-                      'marker-symbol': "bus",
+                      'marker-symbol': "beer",
                       title: 'Bar One',
                       description: 'Happy Hour blah blah.'}
         });
         markerLayer.add_feature({
         geometry: {coordinates: [-122.4, 47.58]},
-        properties: {'marker-color': '#000',
+        properties: {'marker-color': '#3FCBF2',
                       'marker-size': "medium",
-                      'marker-symbol': "bus",
+                      'marker-symbol': "beer",
                       title: 'Bar Two',
                       description: 'Happy Hour c.'}
         });
-        markerLayer.add_feature({
-        geometry: {coordinates: [-122.38, 47.55]},
-        properties: {'marker-color': '#000',
-                    'marker-size': "medium",
-                    'marker-symbol': "bus",
-                    title: 'Bar Three',
-                    description: 'Happy Hour rulezzzz'}
-        });
-       markerLayer.add_feature({
-        geometry: {coordinates: [lngi, lati]},
-        properties: {'marker-color': '#E01B6A',
-                    'marker-size': "medium",
-                    'marker-symbol': "bus",
-                    title: 'You',
-                    description: 'Here you are.'}
 
-        });
+
+
 
         map.addLayer(markerLayer)
           .setExtent(markerLayer.extent());
