@@ -1,6 +1,7 @@
 class MapController < ApplicationController
   def index
     @lat_lng = get_user_location
+    
   end
 
   private
