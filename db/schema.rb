@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408224235) do
+ActiveRecord::Schema.define(:version => 20130523171520) do
 
   create_table "bargains", :force => true do |t|
     t.integer  "happy_hour_id"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130408224235) do
     t.integer  "record_number"
     t.datetime "created_at",                              :null => false
     t.datetime "updated_at",                              :null => false
+    t.integer  "same_bargains"
   end
 
   add_index "happy_hours", ["end_time"], :name => "index_happy_hours_on_end_time"

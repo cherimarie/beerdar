@@ -1,45 +1,44 @@
-<script src="overthrow.js"></script>
-
-
 <%- unless @lat_lng %>
   <script>
     getGeoLocation();
   </script>
 <%- end %>
 
-    <div id="branding">
-       <div id="branding-left">
-        <a href=""></a>
-      </div>
+<div id="branding">
+   <div id="branding-left">
+    <a href=""></a>
+  </div>
 
-      <div id="branding-center">
-      <!--  <img src='/assets/slime.png' alt='slime' height='20' /> -->
-        <h1 class='map-title'></h1>
-          <p id="latlng">11</p>
-      </div>
+  <div id="branding-center">
+  <!--  <img src='/assets/slime.png' alt='slime' height='20' /> -->
+    <h1 class='map-title'></h1>
+      <p id="latlng">11</p>
+  </div>
 
-       <div id="branding-right">
-        <a href=""></a>
-      </div>
-    </div>
+   <div id="branding-right">
+    <a href=""></a>
+  </div>
+</div>
 
 
-    <div id="content">
+<div id="content">
 
-      <%= flash[:no_location_found] %>
-      <div class="limiter">
+  <%= flash[:no_location_found] %>
+  <div class="limiter">
 
-        <div id="about">
+    <div id="about">
 
-          <p class='description'></p>
-          <div id="markerfilters" class="clearfix section">
-            <a class="markerfilter selected" href="#all">All</a>
-          </div>
-        </div>
+      <p class='description'></p>
+      <div id="markerfilters" class="clearfix section">
+        <a class="markerfilter selected" href="#all">All</a>
       </div>
     </div>
-    <div id="map"  class="map overthrow"></div>
-    <script src="/assets/script.js"></script>
+  </div>
+</div>
+
+<%= content_tag 'div', id: "map", class: "map overthrow", data: { locations: Location.limit(10) } do %>
+<% end %>
+<script src="/assets/script.js"></script>
 <!--this is where we'll set varia ble to data, run script to do stuff with data-->
 
 
