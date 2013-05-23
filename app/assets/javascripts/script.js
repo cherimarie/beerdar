@@ -30,30 +30,30 @@
 
       //these hard-coded arrays represent the data that will be sent in about 10 nearest bars
        //then function runs through, creating markers
-      var myinfo = new Array("bar", "-122.28", "47.54", "$2 domestics, $3 micros, $3.50 wells, and food under $4");
-      var myinfo2 = new Array("bar two", "-122.29", "47.55", "$2 domestics, $3 micros, $3.50 wells, and food under $4");
+      var myinfo = {"barname": "bar", "lat": "-122.28", "lon": "47.54","desc": "$2 domestics, $3 micros"};
+      var myinfo2 = {"barname": "bar two", "lat": "-122.29", "lon": "47.55", "desc": "$3.50 wells and food under $4"};
       var allmyinfo = new Array (myinfo,myinfo2);
 
       markerGen(allmyinfo);
 
       function markerGen(info){
-
+        console.log(info[0].barname);
         markerLayer.add_feature({
-        geometry: {coordinates: [info[0][1], info[0][2]]},
+        geometry: {coordinates: [info[0].lat, info[0].lon]},
         properties: {"marker-color": "#3FCBF2",
                       "marker-size": "medium",
                       "marker-symbol": "beer",
-                      "title": info[0][0],
-                      "description": info[0][3]}
+                      "title": info[0].barname,
+                      "description": info[0].desc}
         });
 
         markerLayer.add_feature({
-        geometry: {coordinates: [info[1][1], info[1][2]]},
+        geometry: {coordinates: [info[1].lat, info[1].lon]},
         properties: {"marker-color": "#3FCBF2",
                       "marker-size": "medium",
                       "marker-symbol": "beer",
-                      "title": info[1][0],
-                      "description": info[1][3]}
+                      "title": info[1].barname,
+                      "description": info[1].desc}
         });
 
       }
