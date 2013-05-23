@@ -17,53 +17,69 @@
     lngi = position.coords.longitude;
 
     //just to show results
-   // var latdump = document.getElementById("latlng");
-    //latdump.innerHTML = "your location: " + lati + lngi;
+   //var latdump = document.getElementById("latlng");
+   // latdump.innerHTML = "your location: " + lati + lngi;
 
     // Create and load map
     $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
     {
 
-        map.setZoomRange(10, 19);
+        map.setZoomRange(13, 19);
         var markerLayer = mapbox.markers.layer();
         mapbox.markers.interaction(markerLayer);
 
-       markerLayer.add_feature({
-        geometry: {coordinates: [lngi, lati]},
-        properties: {'marker-color': '#EB843F',
-                    'marker-size': "medium",
-                    'marker-symbol': "pitch",
-                    title: 'You',
-                    description: 'Here you are.'}
-
-        });
-
-       //rails needs to run db query, send close results to here
+      //these hard-coded arrays represent the data that will be sent in about 10 nearest bars
        //then function runs through, creating markers
+      var myinfo = new Array("bar", "-122.28", "47.54", "$2 domestics, $3 micros, $3.50 wells, and food under $4");
+      var myinfo2 = new Array("bar two", "-122.29", "47.55", "$2 domestics, $3 micros, $3.50 wells, and food under $4");
+      var allmyinfo = new Array (myinfo,myinfo2);
 
+      markerGen(allmyinfo);
+
+      function markerGen(info){
 
         markerLayer.add_feature({
-        geometry: {coordinates: [-122.32, 47.61]},
-        properties: {'marker-color': '#3FCBF2',
-                      'marker-size': "medium",
-                      'marker-symbol': "beer",
-                      title: 'Bar One',
-                      description: 'Happy Hour blah blah.'}
+        geometry: {coordinates: [info[0][1], info[0][2]]},
+        properties: {"marker-color": "#3FCBF2",
+                      "marker-size": "medium",
+                      "marker-symbol": "beer",
+                      "title": info[0][0],
+                      "description": info[0][3]}
         });
+
         markerLayer.add_feature({
-        geometry: {coordinates: [-122.4, 47.58]},
-        properties: {'marker-color': '#3FCBF2',
-                      'marker-size': "medium",
-                      'marker-symbol': "beer",
-                      title: 'Bar Two',
-                      description: 'Happy Hour c.'}
+        geometry: {coordinates: [info[1][1], info[1][2]]},
+        properties: {"marker-color": "#3FCBF2",
+                      "marker-size": "medium",
+                      "marker-symbol": "beer",
+                      "title": info[1][0],
+                      "description": info[1][3]}
         });
 
+      }
 
 
+      markerLayer.add_feature({
+      geometry: {coordinates: [lngi, lati]},
+      properties: {'marker-color': '#EB843F',
+                   "marker-size": "medium",
+                   "marker-symbol": "pitch",
+                  "title": "You",
+                  "description": "Here you are. You look thirsty."}
+      });
 
-        map.addLayer(markerLayer)
-          .setExtent(markerLayer.extent());
+      markerLayer.add_feature({
+      geometry: {coordinates: [-122.4, 47.58]},
+      properties: {'marker-color': '#3FCBF2',
+                    "marker-size": "medium",
+                    "marker-symbol": "beer",
+                    "title": 'Test Bar',
+                    "description": 'Happy Hour party time!'}
+      });
+
+
+      map.addLayer(markerLayer)
+        .setExtent(markerLayer.extent());
 
 
         // Add share control
