@@ -28,7 +28,7 @@
       var markerLayer = mapbox.markers.layer();
       mapbox.markers.interaction(markerLayer);
 
-      //these hard-coded arrays represent the data that will be sent in about 10 nearest bars
+      //these hard-coded arrays represent the data that will be sent in about nearest bars
        //then function runs through, creating markers
       var myinfo = {"barname": "bar", "lat": "-122.28", "lon": "47.54","desc": "$2 domestics, $3 micros"};
       var myinfo2 = {"barname": "bar two", "lat": "-122.29", "lon": "47.55", "desc": "$3.50 wells and food under $4"};
@@ -37,24 +37,21 @@
       markerGen(allmyinfo);
 
       function markerGen(info){
-        console.log(info[0].barname);
-        markerLayer.add_feature({
-        geometry: {coordinates: [info[0].lat, info[0].lon]},
-        properties: {"marker-color": "#3FCBF2",
-                      "marker-size": "medium",
-                      "marker-symbol": "beer",
-                      "title": info[0].barname,
-                      "description": info[0].desc}
-        });
+        //test output:
+        //console.log(info[0].barname);
 
-        markerLayer.add_feature({
-        geometry: {coordinates: [info[1].lat, info[1].lon]},
-        properties: {"marker-color": "#3FCBF2",
-                      "marker-size": "medium",
-                      "marker-symbol": "beer",
-                      "title": info[1].barname,
-                      "description": info[1].desc}
-        });
+        for(i in info){
+
+          markerLayer.add_feature({
+          geometry: {coordinates: [info[i].lat, info[i].lon]},
+          properties: {"marker-color": "#3FCBF2",
+                        "marker-size": "medium",
+                        "marker-symbol": "beer",
+                        "title": info[i].barname,
+                        "description": info[i].desc}
+          });
+
+        }
 
       }
 
@@ -68,6 +65,7 @@
                   "description": "Here you are. You look thirsty."}
       });
 
+    /*  test marker
       markerLayer.add_feature({
       geometry: {coordinates: [-122.4, 47.58]},
       properties: {'marker-color': '#3FCBF2',
@@ -75,7 +73,7 @@
                     "marker-symbol": "beer",
                     "title": 'Test Bar',
                     "description": 'Happy Hour party time!'}
-      });
+      });*/
 
 
       map.addLayer(markerLayer)
