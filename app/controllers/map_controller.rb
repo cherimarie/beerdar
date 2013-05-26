@@ -1,7 +1,7 @@
 class MapController < ApplicationController
   def index
     @lat_lng = get_user_location
-    
+    @location_data = Location.get_marker_data(current_location: @lat_lng)
   end
 
   private
