@@ -24,34 +24,57 @@
     $('#map').mapbox('beerdar.map-97fds4u6', function(map, tilejson)
     {
 
-      map.setZoomRange(13, 19);
+      map.setZoomRange(8, 19);
       var markerLayer = mapbox.markers.layer();
       mapbox.markers.interaction(markerLayer);
 
-      //these hard-coded arrays represent the data that will be sent in about nearest bars
-       //then function runs through, creating markers
-      var myinfo = {"barname": "bar", "lat": "-122.28", "lon": "47.54","desc": "$2 domestics, $3 micros"};
-      var myinfo2 = {"barname": "bar two", "lat": "-122.29", "lon": "47.55", "desc": "$3.50 wells and food under $4"};
-      var allmyinfo = new Array (myinfo,myinfo2);
-   console.log(nearbyLocationData);
+      //show what info is coming in:
+      console.log(nearbyLocationData);
+      //assign incoming info to variable
+      var allmyinfo = nearbyLocationData;
+      //run markerGen to create markers from incoming bar data
       markerGen(allmyinfo);
 
       function markerGen(info){
-        //test output:
-        //console.log(info[0].barname);
-
         for(i in info){
+         //create long string of happy hours
+
+          happyTimes(info[i].happy_hours);
+
+
 
           markerLayer.add_feature({
-          geometry: {coordinates: [info[i].lat, info[i].lon]},
+          geometry: {coordinates: [info[i].longitude, info[i].latitude]},
           properties: {"marker-color": "#3FCBF2",
                         "marker-size": "medium",
                         "marker-symbol": "beer",
-                        "title": info[i].barname,
-                        "description": info[i].desc}
+                        "title": info[i].name,
+                        "description": info[i].address + " " + happiness
+                      }
           });
 
         }
+
+      }
+      var happiness;
+      function happyTimes(stuff){
+       // console.log(stuff[0].days);
+
+          for (i in stuff){
+            var deals = bargainGetter(stuff[i].bargains);
+            happiness += stuff[i].days + " " + deals;
+            }
+            return happiness;
+
+      }
+
+      function bargainGetter(stuff){
+          var deals;
+           for(j in stuff){
+              deals += stuff[j].deal;
+              //console.log(stuff[j].deal);
+            }
+            return deals;
 
       }
 
