@@ -4,7 +4,7 @@
   <% end %>
 <%- end %>
 <%= javascript_tag do %>
-  window.nearbyLocationData = <%= raw Location.get_marker_data.to_json %>;
+  window.nearbyLocationData = <%= raw @location_data.to_json %>;
 <% end %>
 
 <div id="branding">

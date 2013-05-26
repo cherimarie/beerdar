@@ -4,8 +4,13 @@ class Location < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  def self.get_marker_data(limit = 10)
-    locations = Location.limit(limit)
+  def self.get_marker_data(options={})
+    defaults = {
+      current_location: "The Space Needle, Seattle, WA",
+      limit: 10
+    }
+    options = defaults.merge(options)
+    locations = Location.near(options[:current_location]).limit(options[:limit])
     get_location_hash(locations)
   end
 
