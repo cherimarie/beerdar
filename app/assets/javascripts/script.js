@@ -4,7 +4,6 @@
   window.onload = function()
   {
     getGeoLocation();
-    console.log(nearbyLocationData);
   }
 
   function getGeoLocation() {
@@ -29,13 +28,12 @@
       var markerLayer = mapbox.markers.layer();
       mapbox.markers.interaction(markerLayer);
 
-   alert($('#bar_data').data('one'));
       //these hard-coded arrays represent the data that will be sent in about nearest bars
        //then function runs through, creating markers
       var myinfo = {"barname": "bar", "lat": "-122.28", "lon": "47.54","desc": "$2 domestics, $3 micros"};
       var myinfo2 = {"barname": "bar two", "lat": "-122.29", "lon": "47.55", "desc": "$3.50 wells and food under $4"};
       var allmyinfo = new Array (myinfo,myinfo2);
-
+   console.log(nearbyLocationData);
       markerGen(allmyinfo);
 
       function markerGen(info){
