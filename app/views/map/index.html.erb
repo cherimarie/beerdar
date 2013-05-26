@@ -6,7 +6,7 @@
 
 <div id="branding">
    <div id="branding-left">
-    <a href=""></a>
+    <a id="menu" href="#">menu</a>
   </div>
 
   <div id="branding-center">
@@ -15,10 +15,9 @@
       <p id="latlng"></p>
   </div>
   <div id="branding-right">
-    <a href=""></a>
-    <%= content_tag "p", id: "bar_data", data: {one: "soup"} do %>
-    testy
-<% end %>
+    <a id="go_home" href="#">where am i?</a>
+    <%= content_tag "p", id: "bar_data", data: {bar_data: Location.get_marker_data} do %>
+    <% end %>
   </div>
 </div>
 
@@ -39,7 +38,7 @@
   </div>
 </div>
 
-<%= content_tag 'div', id: "map", class: "map overthrow", data: { locations: Location.limit(10) } do %>
+<%= content_tag 'div', id: "map", class: "map overthrow", data: {locations: Location.limit(10)} do %>
 <% end %>
 <script src="/assets/script.js"></script>
 <!--this is where we'll set varia ble to data, run script to do stuff with data-->
