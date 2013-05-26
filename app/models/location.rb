@@ -1,6 +1,8 @@
 class Location < ActiveRecord::Base
   attr_accessible :address, :latitude, :longitude, :name, :version, :record_number
   has_many :happy_hours
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 
   def self.get_marker_data(limit = 10)
     locations = Location.limit(limit)

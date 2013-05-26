@@ -1,8 +1,11 @@
 <%- unless @lat_lng %>
-  <script>
+  <%= javascript_tag do %>
     getGeoLocation();
-  </script>
+  <% end %>
 <%- end %>
+<%= javascript_tag do %>
+  window.nearbyLocationData = <%= raw Location.get_marker_data.to_json %>;
+<% end %>
 
 <div id="branding">
    <div id="branding-left">
@@ -16,8 +19,8 @@
   </div>
   <div id="branding-right">
     <a id="go_home" href="#">where am i?</a>
-    <%= content_tag "p", id: "bar_data", data: {bar_data: Location.get_marker_data} do %>
-    <% end %>
+
+    <a href=""></a>
   </div>
 </div>
 
