@@ -4,6 +4,7 @@
   window.onload = function()
   {
     getGeoLocation();
+    console.log(nearbyLocationData);
   }
 
   function getGeoLocation() {
