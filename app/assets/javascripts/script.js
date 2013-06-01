@@ -35,6 +35,7 @@
 
       //show what info is coming in:
      // console.log(nearbyLocationData);
+
       //assign incoming info to variable
       var allmyinfo = nearbyLocationData;
       console.log(allmyinfo);
@@ -45,11 +46,11 @@
       function markerGen(info){
         for(i in info){
          //create long string of happy hours
-         happyTimes(info[i].happy_hours);
+         var happiness = happyTimes(info[i].happy_hours);
 
           markerLayer.add_feature({
           geometry: {coordinates: [info[i].longitude, info[i].latitude]},
-          properties: {"marker-color": "#3FCBF2",
+          properties: {"marker-color": "#EBD023",
                         "marker-size": "medium",
                         "marker-symbol": "beer",
                         "title": info[i].name,
@@ -58,10 +59,10 @@
           });
         }
       }
-      var happiness = '';
+
       function happyTimes(stuff){
        // console.log(stuff[0].days);
-
+       var happiness = '';
           for (i in stuff){
             var deals = bargainGetter(stuff[i].bargains);
             happiness += stuff[i].days + " " + deals;
@@ -79,10 +80,9 @@
 
       }
 
-
       markerLayer.add_feature({
       geometry: {coordinates: [lngi, lati]},
-      properties: {'marker-color': '#EB843F',
+      properties: {'marker-color': '#D95A1A',
                    "marker-size": "medium",
                    "marker-symbol": "pitch",
                   "description": "You look thirsty."}
@@ -111,13 +111,15 @@
       $('h1.map-title').text(tilejson.name);
       $('p.description').text(tilejson.description);
 
-      //create list of markers in markerfilter area
+  //create list of markers in markerfilter area- lots of comments to make this clearer to me
       var container = $('#markerfilters');
       $.each(tilejson.markers.markers(), function(index, m) {
           var s = m.data.properties['marker-symbol'];
 
+              //if the div #markerfilters already contains link to given marker symbol, return
           if (container.find('[href="#' + s + '"]').length) return;
 
+          //creates linky images- adds <a href="#symbol"> tag, appropriate background image, applies class- puts in #markerfilters div
           var el = $(document.createElement('a'))
               .addClass('markerfilter')
               .attr('href', '#' + s)

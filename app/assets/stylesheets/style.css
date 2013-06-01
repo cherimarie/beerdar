@@ -102,7 +102,7 @@ body > div {
   position: absolute;
   top:0px;
   width: 100%;
-  background-color: #FAECD2;
+  background-color: #FAF3E6;
   opacity: 0.9;
   padding: 3px;
   overflow-x:hidden;
@@ -136,7 +136,7 @@ body > div {
   top:80%;
 
   width:100%;
-  background:#FAECD2;
+  background:#FAF3E6;
   opacity: 0.9;
   border-top:1px solid #ccc;
   overflow-x:hidden;
