@@ -28,22 +28,24 @@
       var markerLayer = mapbox.markers.layer();
       mapbox.markers.interaction(markerLayer);
 
+      //two view modes, accessed by menu:
+      // 1- what is open RIGHT NOW and what their deals are
+      //2- what are all the happy hours, and what are their hours and deals
+
 
       //show what info is coming in:
-      console.log(nearbyLocationData);
+     // console.log(nearbyLocationData);
       //assign incoming info to variable
       var allmyinfo = nearbyLocationData;
-      //run markerGen to create markers from incoming bar data
+      console.log(allmyinfo);
 
+      //run markerGen to create markers from incoming bar data
       markerGen(allmyinfo);
 
       function markerGen(info){
         for(i in info){
          //create long string of happy hours
-
-          happyTimes(info[i].happy_hours);
-
-
+         happyTimes(info[i].happy_hours);
 
           markerLayer.add_feature({
           geometry: {coordinates: [info[i].longitude, info[i].latitude]},
@@ -54,11 +56,9 @@
                         "description": info[i].address + " " + happiness
                       }
           });
-
         }
-
       }
-      var happiness;
+      var happiness = '';
       function happyTimes(stuff){
        // console.log(stuff[0].days);
 
@@ -67,11 +67,10 @@
             happiness += stuff[i].days + " " + deals;
             }
             return happiness;
-
       }
 
       function bargainGetter(stuff){
-          var deals;
+          var deals = '';
            for(j in stuff){
               deals += stuff[j].deal;
               //console.log(stuff[j].deal);
@@ -86,8 +85,7 @@
       properties: {'marker-color': '#EB843F',
                    "marker-size": "medium",
                    "marker-symbol": "pitch",
-                  "title": "You",
-                  "description": "Here you are. You look thirsty."}
+                  "description": "You look thirsty."}
       });
 
     /*  test marker
@@ -113,7 +111,7 @@
       $('h1.map-title').text(tilejson.name);
       $('p.description').text(tilejson.description);
 
-
+      //create list of markers in markerfilter area
       var container = $('#markerfilters');
       $.each(tilejson.markers.markers(), function(index, m) {
           var s = m.data.properties['marker-symbol'];

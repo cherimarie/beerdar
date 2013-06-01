@@ -102,18 +102,20 @@ body > div {
   position: absolute;
   top:0px;
   width: 100%;
-  background-color: #A6977C;
+  background-color: #FAECD2;
   opacity: 0.9;
   padding: 3px;
   overflow-x:hidden;
   overflow-y:auto;
-  height: 7%;
+  height: 50px;
 }
 
-#branding-left{
-  width: 8%;
+#branding-side{
+  width: 6%;
   float: left;
   padding: 3px;
+  margin: auto;
+
 }
 
 #branding-center {
@@ -121,13 +123,9 @@ body > div {
   width:80%;
   float: left;
   padding: 3px;
+  padding-left: 5px;
 }
 
-#branding-right {
-  width: 8%;
-  float: left;
-  padding: 3px;
-}
 
 #map-title {
 
@@ -136,11 +134,9 @@ body > div {
 #content {
   position:absolute;
   top:80%;
-  right:0;
-  left:0;
-  bottom:0;
+
   width:100%;
-  background:#A6977C;
+  background:#FAECD2;
   opacity: 0.9;
   border-top:1px solid #ccc;
   overflow-x:hidden;
@@ -148,6 +144,12 @@ body > div {
   padding:20px;
 }
 
+.nav_icon{
+  max-height: 60%;
+  margin: auto;
+  padding-top: 8px;
+  max-width: 80%;
+}
 .section {
   width: 125px;
   margin-bottom: 20px;
@@ -168,6 +170,7 @@ body > div {
   background:#369;
   color:white;
 }
+
 p { margin-bottom:20px;}
 
 label { font-weight:700;}
@@ -224,8 +227,8 @@ form.geocode.loading input[type=submit] {
 }
 a.zoomer {
   position: absolute;
-  top: 45px;
-
+  top: 65px;
+  z-index: 99;
 }
 
 .wax-tooltip {
@@ -272,7 +275,6 @@ a.zoomer {
   margin-top:0.5em;
 }
 .share {
-  top:45px;
   z-index:1000;
 }
 
