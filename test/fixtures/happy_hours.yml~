@@ -1,0 +1,168 @@
+5 Point Cafe_hh:
+  name: Happy Hour
+  days: MTWHF
+  start_time: 6am PDT
+  end_time: 9am PDT
+  version: 1
+  location: 5 Point Cafe
+  record_number: 
+  id: 424201
+5 Point Cafe_hh2:
+  name: Happy Hour
+  days: MTWHF
+  start_time: 4pm PDT
+  end_time: 6pm PDT
+  version: 1
+  location: 5 Point Cafe
+  record_number: 
+  same_bargains: 424201
+5 Spot_hh:
+  name: Happy Hour
+  days: MTWHF
+  start_time: 3pm PDT
+  end_time: 6pm PDT
+  version: 1
+  location: 5 Spot
+  record_number: 
+  id: 424202
+5 Spot_hh2:
+  name: Happy Hour
+  days: MTWHF
+  start_time: 10pm PDT
+  end_time: 12am PDT
+  version: 1
+  location: 5 Spot
+  record_number:  
+  same_bargains: 424202
+9 Lb Hammer_hh:
+  name: Happy Hour
+  days: MTWHF
+  start_time: 11am PDT
+  end_time: 7pm PDT
+  version: 1
+  location: 9 Lb Hammer
+  record_number: 
+Annapurna Cafe_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 3pm PDT
+  end_time: 6pm PDT
+  version: 1
+  location: Annapurna Cafe
+  record_number: 
+ART Restaurant and Lounge_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 5pm PDT
+  end_time: 7pm PDT
+  version: 1
+  location: ART Restaurant and Lounge
+  record_number:
+  id: 424203
+ART Restaurant and Lounge_hh2:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 9pm PDT
+  end_time: 11pm PDT
+  version: 1
+  location: ART Restaurant and Lounge
+  record_number: 
+  same_bargains: 424203
+Athenian Inn_hh:
+  name: Happy Hour
+  days: MTWHFS
+  start_time: 4pm PDT
+  end_time: 9pm PDT
+  version: 1
+  location: Athenian Inn
+  record_number: 
+Ba Bar_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 3pm PDT
+  end_time: 7pm PDT
+  version: 1
+  location: Ba Bar
+  record_number: 
+Ballard Loft_hh:
+  name: Happy Hour
+  days: F
+  start_time: 4pm PDT
+  end_time: 7pm PDT
+  version: 1
+  location: Ballard Loft
+  record_number:
+  id: 424204
+Ballard Loft_hh2:
+  name: Happy Hour
+  days: MU
+  start_time: 4pm PDT
+  end_time: 12am PDT
+  version: 1
+  location: Ballard Loft
+  record_number: 
+  same_bargains: 424204
+Ballard Loft_hh3:
+  name: Happy Hour
+  days: TWHF
+  start_time: 10pm PDT
+  end_time: 12am PDT
+  version: 1
+  location: Ballard Loft
+  record_number: 
+The Bar at Pan Pacific Hotel_hh:
+  name: Happy Hour
+  days: MTWHF
+  start_time: 4pm PDT
+  end_time: 6pm PDT
+  version: 1
+  location: The Bar at Pan Pacific Hotel
+  record_number: 
+Barça_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 5pm PDT
+  end_time: 7pm PDT
+  version: 1
+  location: Barça
+  record_number: 
+Big Mario's New York Style Pizza_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 3pm PDT
+  end_time: 4pm PDT
+  version: 1
+  location: Big Mario's New York Style Pizza
+  record_number: 
+Big Time Brewery & Alehouse_hh:
+  name: Happy Hour
+  days: MTWHSU
+  start_time: 2pm PDT
+  end_time: 5pm PDT
+  version: 1
+  location: Big Time Brewery & Alehouse
+  record_number: 
+Black Coffee Co-op_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 6pm PDT
+  end_time: 9pm PDT
+  version: 1
+  location: Black Coffee Co-op
+  record_number: 
+Can Can_hh:
+  name: Happy Hour
+  days: MTWHU
+  start_time: 6pm PDT
+  end_time: 11pm PDT
+  version: 1
+  location: Can Can
+  record_number: 
+Captain Blacks_hh:
+  name: Happy Hour
+  days: MTWHFSU
+  start_time: 4pm PDT
+  end_time: 6pm PDT
+  version: 1
+  location: Captain Blacks
+  record_number: 
