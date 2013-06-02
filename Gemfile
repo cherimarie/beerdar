@@ -7,7 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'yaml_db'
 gem 'geocoder'
-gem 'rabl'
+gem 'bullet', :group => :development
 
 
 group :test do

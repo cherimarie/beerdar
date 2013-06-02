@@ -1,0 +1,119 @@
+5 Point Cafe:
+  name: 5 Point Cafe
+  address: 415 Cedar Street, Seattle, WA 98121, USA
+  longitude: -122.347253
+  latitude: 47.6181399
+  version: 1
+  record_number: 
+5 Spot:
+  name: 5 Spot
+  address: 1502 Queen Anne Avenue North, Seattle, WA 98109, USA
+  longitude: -122.3569161
+  latitude: 47.63243980000001
+  version: 1
+  record_number: 
+9 Lb Hammer:
+  name: 9 Lb Hammer
+  address: 6009 Airport Way South, Seattle, WA 98108, USA
+  longitude: -122.3167123
+  latitude: 47.5490268
+  version: 1
+  record_number: 
+Annapurna Cafe:
+  name: Annapurna Cafe
+  address: 1833 Broadway, Seattle, WA 98122, USA
+  longitude: -122.3210219
+  latitude: 47.6185633
+  version: 1
+  record_number: 
+ART Restaurant and Lounge:
+  name: ART Restaurant and Lounge
+  address: 99 Union Street, Seattle, WA 98101, USA
+  longitude: -122.339156
+  latitude: 47.607377
+  version: 1
+  record_number: 
+Athenian Inn:
+  name: Athenian Inn
+  address: 1517 Pike Place, Pike Place Market, Seattle, WA 98101, USA
+  longitude: -122.3404629
+  latitude: 47.6087715
+  version: 1
+  record_number: 
+Ba Bar:
+  name: Ba Bar
+  address: 550 12th Avenue, Seattle University, Seattle, WA 98122, USA
+  longitude: -122.3166447
+  latitude: 47.60691449999999
+  version: 1
+  record_number: 
+Ballard Loft:
+  name: Ballard Loft
+  address: 5105 Ballard Avenue Northwest, Seattle, WA 98107, USA
+  longitude: -122.3811109
+  latitude: 47.6645263
+  version: 1
+  record_number: 
+The Bar at Pan Pacific Hotel:
+  name: The Bar at Pan Pacific Hotel
+  address: 2125 Terry Avenue, 2200, Seattle, WA 98121, USA
+  longitude: -122.3371739
+  latitude: 47.6182476
+  version: 1
+  record_number: 
+Barça:
+  name: Barça
+  address: 1510 11th Avenue, Seattle, WA 98122, USA
+  longitude: -122.3180043
+  latitude: 47.6144612
+  version: 1
+  record_number: 
+Belltown Pizza:
+  name: Belltown Pizza
+  address: 2128 Queen Anne Avenue North, Seattle, WA 98109, USA
+  longitude: -122.356537
+  latitude: 47.6381472
+  version: 1
+  record_number: 
+Beth's Cafe:
+  name: Beth's Cafe
+  address: 7311 Aurora Avenue North, Seattle, WA 98103, USA
+  longitude: -122.3446262
+  latitude: 47.68209419999999
+  version: 1
+  record_number: 
+Big Mario's New York Style Pizza:
+  name: Big Mario's New York Style Pizza
+  address: 1009 East Pike Street, Seattle, WA 98122, USA
+  longitude: -122.3184778
+  latitude: 47.6139866
+  version: 1
+  record_number: 
+Big Time Brewery & Alehouse:
+  name: Big Time Brewery & Alehouse
+  address: 4133 University Way Northeast, Seattle, WA 98105, USA
+  longitude: -122.313216
+  latitude: 47.657576
+  version: 1
+  record_number: 
+Black Coffee Co-op:
+  name: Black Coffee Co-op
+  address: 501 East Pine Street, Seattle, WA 98122, USA
+  longitude: -122.3252524
+  latitude: 47.6150785
+  version: 1
+  record_number: 
+Can Can:
+  name: Can Can
+  address: ! '93 Pike Street #307, Pike Place Market, Seattle, WA 98101, USA'
+  longitude: -122.3402147
+  latitude: 47.6085795
+  version: 1
+  record_number: 
+Captain Blacks:
+  name: Captain Blacks
+  address: 129 Belmont Avenue East, Seattle, WA 98122, USA
+  longitude: -122.3240012
+  latitude: 47.6188556
+  version: 1
+  record_number: 
