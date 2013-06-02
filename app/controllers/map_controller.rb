@@ -1,7 +1,10 @@
 class MapController < ApplicationController
   def index
-    @lat_lng = get_user_location
-    @location_data = Location.get_marker_data(current_location: @lat_lng)
+    options = {
+      current_location: get_user_location,
+      open_now: (params[:view_all] == "y") ? false : true
+    }
+    @location_data = Location.get_marker_data(options)
   end
 
   private

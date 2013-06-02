@@ -41,8 +41,9 @@ class HappyHour < ActiveRecord::Base
   end  
 
   def open_today?
-    days.include?(HappyHour.todays_letter)
-  end
+    days.include?(HappyHour.todays_letter) # Will need to change to account for happy hours after midnight.
+  end                                      # It'll return false negatives when you're 12am+ on a day not 
+                                           # specifically listed in the days attribute
 
   def open_at_this_time?
     time_inside?(Time.now.utc, start_time.utc, end_time.utc)
