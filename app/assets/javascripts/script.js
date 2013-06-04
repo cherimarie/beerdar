@@ -53,8 +53,8 @@
           properties: {"marker-color": "#EBD023",
                         "marker-size": "medium",
                         "marker-symbol": "beer",
-                        "title": info[i].name,
-                        "description": info[i].address + " " + happiness
+                        title: info[i].name,
+                        description: info[i].address + " " + happiness
                       }
           });
         }
@@ -65,7 +65,7 @@
        var happiness = '';
           for (i in stuff){
             var deals = bargainGetter(stuff[i].bargains);
-            happiness += stuff[i].days + " " + deals;
+            happiness += "<br />" + stuff[i].days + " " + stuff[i].start_time + " - " + stuff[i].end_time + "<br />" + deals + "<br />";
             }
             return happiness;
       }
@@ -85,7 +85,7 @@
       properties: {'marker-color': '#D95A1A',
                    "marker-size": "medium",
                    "marker-symbol": "pitch",
-                  "description": "You look thirsty."}
+                  description: "You look thirsty."}
       });
 
     /*  test marker

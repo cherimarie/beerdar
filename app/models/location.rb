@@ -7,7 +7,7 @@ class Location < ActiveRecord::Base
   def self.get_marker_data(options={})
     defaults = {
       current_location: "The Space Needle, Seattle, WA",
-      limit: 10,
+      limit: 100,
       open_now: true
     }
     options = defaults.merge(options)
@@ -45,8 +45,8 @@ private
             end
             happy_hour_hash[happy_hour_index] = {
               "name" => happy_hour.name,
-              "start_time" => happy_hour.start_time, # We probably need to fix this up to
-              "end_time" => happy_hour.end_time,     # handle different time zones properly
+              "start_time" => happy_hour.start_time.strftime('%-l:%M %p'), # We probably need to fix this up to
+              "end_time" => happy_hour.end_time.strftime('%-l:%M %p'),     # handle different time zones properly
               "days" => happy_hour.days,
               "id" => happy_hour.id,
               "bargains" => bargain_hash

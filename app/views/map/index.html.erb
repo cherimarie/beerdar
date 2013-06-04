@@ -1,15 +1,11 @@
-<%- unless @lat_lng %>
-  <%= javascript_tag do %>
-    getGeoLocation();
-  <% end %>
-<%- end %>
+
 <%= javascript_tag do %>
   window.nearbyLocationData = <%= raw @location_data.to_json %>;
 <% end %>
 
 <div id="branding">
    <div id="branding-side">
-    <a id="menu" href="#"><img class="nav_icon" src="assets/monkey.png" /></a>
+   <!-- <a id="menu" href="#"><img class="nav_icon" src="assets/monkey.png" /></a>-->
   </div>
 
   <div id="branding-center">
@@ -18,9 +14,8 @@
       <p id="latlng"></p>
   </div>
   <div id="branding-side">
-    <a id="go_home" href="#"><img class="nav_icon" src="assets/target2.png" /></a>
-
-    <a href=""></a>
+    <!--<a id="go_home" href="#"><img class="nav_icon" src="assets/target2.png" /></a>-->
+    <a href="map/list/?view_all=y">v</a>
   </div>
 </div>
 
@@ -42,9 +37,7 @@
   </div>
 </div>
 
-<%= content_tag 'div', id: "map", class: "map overthrow", data: {locations: Location.limit(10)} do %>
+<%= content_tag 'div', id: "map", class: "map overthrow" do %>
 <% end %>
 <script src="/assets/script.js"></script>
-<!--this is where we'll set varia ble to data, run script to do stuff with data-->
-
 

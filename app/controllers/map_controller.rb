@@ -7,6 +7,14 @@ class MapController < ApplicationController
     @location_data = Location.get_marker_data(options)
   end
 
+  def list
+    @list_data = Location.near(get_user_location)
+     .includes(:happy_hours)
+     .includes(:happy_hours => :bargains)
+
+
+  end
+
   private
     def get_user_location
       #return @lat_lng if @lat_lng
