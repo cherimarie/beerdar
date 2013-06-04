@@ -46,7 +46,7 @@ class HappyHour < ActiveRecord::Base
                                            # specifically listed in the days attribute
 
   def open_at_this_time?
-    time_inside?(Time.now.utc, start_time.utc, end_time.utc)
+    time_inside?(Time.now, start_time.utc, end_time.utc)
   end
   
 private

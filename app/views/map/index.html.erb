@@ -15,13 +15,19 @@
   </div>
   <div id="branding-side">
     <!--<a id="go_home" href="#"><img class="nav_icon" src="assets/target2.png" /></a>-->
-    <a href="map/list/?view_all=y">v</a>
+    <% if params[:view_all] == "y" %>
+      <%= link_to "List", controller: "map", action: "list", :params => { :view_all => "y" } %>  <br />
+      <a hr<%= link_to "Show Open HHs", controller: "map", action: "index", :params => { :view_all => "n" } %> 
+    <% else %>
+      <%= link_to "List", controller: "map", action: "list", :params => { :view_all => "n" } %>  <br />
+      <%= link_to "Show All", controller: "map", action: "index", :params => { :view_all => "y" } %> 
+    <% end %>
   </div>
 </div>
 
 
 
-<div id="content">
+<!--<div id="content">
 
   <%= flash[:no_location_found] %>
   <div class="limiter">
@@ -35,7 +41,7 @@
           </div>
     </div>
   </div>
-</div>
+</div>-->
 
 <%= content_tag 'div', id: "map", class: "map overthrow" do %>
 <% end %>
