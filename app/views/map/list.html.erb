@@ -3,6 +3,8 @@
 <h4>Your location is  <%=  Geocoder.address(cookies[:lat_lng].split("|")) %></h4>
 <br />
 
+<br />
+
 <% if params[:view_all] == "y" %>
 	<h4>Here's some happy hours near you: </h4>
 	&nbsp;&nbsp;<%= link_to "Show Currently Running Happy Hours", controller: "map", action: "list", :params => { :view_all => "n" } %><br />
@@ -32,7 +34,7 @@
 			</li><li>
 				<%= hh.start_time.strftime('%-l:%M %p') + " - " + hh.end_time.strftime('%-l:%M %p') %>
 			</li><li>
-				<% hh.bargains.each do |barg| %>
+				<% hh.show_bargains.each do |barg| %>
 					<%= barg.deal %></li>
 				<% end %>
 			</ul>

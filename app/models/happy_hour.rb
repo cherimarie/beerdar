@@ -17,7 +17,7 @@ class HappyHour < ActiveRecord::Base
   end
 
   def self.todays_letter
-    day_of_the_week = Time.now.wday
+    day_of_the_week = (Time.now - (60*60*7)).wday
     case day_of_the_week
     when 0
       "U" #Sunday
@@ -46,7 +46,8 @@ class HappyHour < ActiveRecord::Base
                                            # specifically listed in the days attribute
 
   def open_at_this_time?
-    time_inside?(Time.now, start_time.utc, end_time.utc)
+    now = timenow
+    time_inside?(now, start_time.utc, end_time.utc)
   end
   
 private
@@ -65,5 +66,9 @@ private
     else
       t2f(start) < t2f(time) && t2f(time) < t2f(stop) 
     end
+  end
+
+  def timenow
+    Time.now - (60*60*7) # utc to pdt offset, temporary. Also repeated up top, method doesn't work
   end
 end
