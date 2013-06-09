@@ -27,4 +27,9 @@ module MapHelper
     end
     return day_array.join(", ")
   end
+
+  def obvs_addy(address)
+    addy_array = address.split(",")
+    return addy_array[0]
+  end
 end

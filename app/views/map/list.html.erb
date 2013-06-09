@@ -1,16 +1,16 @@
 <div id="listy">
-<h1>What up, drinker</h1>
+<h1 class="big_text">You Look Thirsty</h1>
 <h4>Your location is  <%=  Geocoder.address(cookies[:lat_lng].split("|")) %></h4>
 <br />
 
 <% if params[:view_all] == "y" %>
 	<h4>Here's some happy hours near you: </h4>
 	&nbsp;&nbsp;<%= link_to "Show Currently Running Happy Hours", controller: "map", action: "list", :params => { :view_all => "n" } %><br />
-	&nbsp;&nbsp;<%= link_to "Map Mode", controller: "map", action: "index", :params => { :view_all => "n" } %> 
+	&nbsp;&nbsp;<%= link_to "Map Mode", controller: "map", action: "index", :params => { :view_all => "n" } %>
 <% else %>
 	<h4> Here's some currently running happy hours near you: </h4>
 	&nbsp;&nbsp;<%= link_to "Show All Happy Hours", controller: "map", action: "list", :params => { :view_all => "y" } %><br />
-	&nbsp;&nbsp;<%= link_to "Map Mode", controller: "map", action: "index", :params => { :view_all => "y" } %> 
+	&nbsp;&nbsp;<%= link_to "Map Mode", controller: "map", action: "index", :params => { :view_all => "y" } %>
 <% end %>
 <br />
 <br />
@@ -26,10 +26,9 @@
 			<%= bar.name %>
 			</strong></li>
 			<li>
-				<%= bar.address %>
+				<%= obvs_addy(bar.address) %>
 			</li><li>
-				<%= pretty_weekdays(hh.days) %>
-			</li><li>
+				<%= pretty_weekdays(hh.days) %> :
 				<%= hh.start_time.strftime('%-l:%M %p') + " - " + hh.end_time.strftime('%-l:%M %p') %>
 			</li><li>
 				<% hh.bargains.each do |barg| %>
@@ -37,6 +36,7 @@
 				<% end %>
 			</ul>
 		</li>
+		<br />
 		<% end %>
 	<% end %> <!--end of if statement -->
 <% end %>
