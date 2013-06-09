@@ -4,23 +4,26 @@
 <% end %>
 
 <div id="branding">
-   <div id="branding-side">
+   <div class="branding-side">
+    <% if params[:view_all] == "y" %>
+      <%= link_to "List View", controller: "map", action: "list", :params => { :view_all => "y" } %>
+    <% else %>
+      <%= link_to "List View", controller: "map", action: "list", :params => { :view_all => "n" } %>
+    <% end %>
    <!-- <a id="menu" href="#"><img class="nav_icon" src="assets/monkey.png" /></a>-->
   </div>
 
   <div id="branding-center">
   <!--  <img src='/assets/slime.png' alt='slime' height='20' /> -->
-    <h1 class='map-title'></h1>
+    <h1 class='map-title big_text'></h1>
       <p id="latlng"></p>
   </div>
-  <div id="branding-side">
+  <div class="branding-side">
     <!--<a id="go_home" href="#"><img class="nav_icon" src="assets/target2.png" /></a>-->
     <% if params[:view_all] == "y" %>
-      <%= link_to "List", controller: "map", action: "list", :params => { :view_all => "y" } %>  <br />
-      <a hr<%= link_to "Show Open HHs", controller: "map", action: "index", :params => { :view_all => "n" } %> 
+      <%= link_to "Show Open", controller: "map", action: "index", :params => { :view_all => "n" } %>
     <% else %>
-      <%= link_to "List", controller: "map", action: "list", :params => { :view_all => "n" } %>  <br />
-      <%= link_to "Show All", controller: "map", action: "index", :params => { :view_all => "y" } %> 
+      <%= link_to "Show All", controller: "map", action: "index", :params => { :view_all => "y" } %>
     <% end %>
   </div>
 </div>

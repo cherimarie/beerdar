@@ -72,7 +72,7 @@
        var happiness = '';
           for (i in stuff){
             var deals = bargainGetter(stuff[i].bargains);
-            happiness += "<br />" + stuff[i].days + " " + stuff[i].start_time + " - " + stuff[i].end_time + "<br />" + deals + "<br />";
+            happiness += "<br />" + stuff[i].days + " " + stuff[i].start_time + " - " + stuff[i].end_time + "<br />" + deals;
             }
             return happiness;
       }
