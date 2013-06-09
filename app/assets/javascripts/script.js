@@ -49,13 +49,13 @@
          var happiness = happyTimes(info[i].happy_hours);
 
           markerLayer.add_feature({
-          geometry: {coordinates: [info[i].longitude, info[i].latitude]},
-          properties: {"marker-color": "#EBD023",
-                        "marker-size": "medium",
-                        "marker-symbol": "beer",
-                        title: info[i].name,
-                        description: info[i].address + " " + happiness
-                      }
+          geometry: {coordinates: [info[i].longitude, info[i].latitude]}//,
+          // properties: {"marker-color": "#EBD023",
+          //               "marker-size": "medium",
+          //               "marker-symbol": "beer",
+          //               title: info[i].name,
+          //               description: info[i].address + " " + happiness
+          //             }
           });
         }
       }
