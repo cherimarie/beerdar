@@ -10,19 +10,19 @@ module MapHelper
     day_array.map! do |day|
       case day
       when "U"
-        "Sunday"
+        "Sun"
       when "M"
-        "Monday"
+        "Mon"
       when "T"
-        "Tuesday"
+        "Tue"
       when "W"
-        "Wednesday"
+        "Wed"
       when "H"
-        "Thursday"
+        "Thur"
       when "F"
-        "Friday"
+        "Fri"
       when "S"
-        "Saturday"
+        "Sat"
       end
     end
     return day_array.join(", ")
