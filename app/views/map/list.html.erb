@@ -39,7 +39,7 @@
 	<br />
 
 	<ul>
-	<% marker_index = 64 %>
+	<% marker_index = 64 %> <!-- This marker_index helps generate matching map icon letters in the list -->
 	<% @list_data.each_with_index do |bar, index| %>
 		<% bar.happy_hours.each do |hh| %>
 			<% if hh.open_now? || params[:view_all] == "y" %>
@@ -48,7 +48,7 @@
 					<ul>
 					<% unless bar == @last_bar %>
 						<li><strong>
-							<% if marker_index < 90 %>
+							<% if marker_index < 90 %> <!-- the list stops generating letter at 90 since there we run out of letters -->
 								<span class="marker_letter"><%= marker_index+=1;marker_index.chr %></span>:
 							<% end %>
 							<%= bar.name %>
