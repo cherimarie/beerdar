@@ -104,25 +104,31 @@ body > div {
   width: 100%;
   background-color: #FAF3E6;
   opacity: 0.9;
-  padding: 3px;
   overflow-x:hidden;
   overflow-y:auto;
-  height: 50px;
+  height: 3.5em;
 }
 
-#branding-side{
-  width: 8%;
+.branding-side{
+  width: 25%;
   float: left;
-  margin: auto;
+  text-align: center;
+  padding-top: .75em;
+}
 
+.branding-side a {
+  background-color: #F2FAE8;
+  opacity: .7;
+  border: 1px solid #B4F067;
+  border-radius: 5px;
+  padding: .25em;
 }
 
 #branding-center {
   text-align: center;
-  width:80%;
+  width:50%;
   float: left;
-  padding: 3px;
-  padding-left: 5px;
+  padding-top: .75em;
 }
 
 
@@ -520,6 +526,27 @@ strong { font-weight:bold; }
   /* make transparent link selection, adjust last value opacity 0 to 1.0 */
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   }
+
+  /*new styles that will hopefully override mapbox presets*/
+  .big_text {font-size: 2em; }
+  .list_header {
+    padding-top: .75em;
+    background-color: #FAF3E6;
+    opacity: 0.9;
+    height: 2.75em;
+    text-align: center;
+  }
+  #listy {padding: 0 2em 1em;}
+  #listy h4 {font-size: 1.25em;}
+  #listy h1, h2, h3, h4, h5 {text-align: center;}
+  #listy a {
+    background-color: #F2FAE8;
+    opacity: .7;
+    border: 1px solid #B4F067;
+    border-radius: 5px;
+    padding: .25em;
+  }
+  .button_area {width: 90%; margin: auto; text-align: center;}
 /*
 @media only screen and (max-device-width: 480px) {
   .map {

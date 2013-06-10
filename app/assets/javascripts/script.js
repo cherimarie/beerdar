@@ -47,6 +47,7 @@
         for(i in info){
          //create long string of happy hours
          var happiness = happyTimes(info[i].happy_hours);
+         var addy = addy_obvs(info[i].address);
 
           markerLayer.add_feature({
           geometry: {coordinates: [info[i].longitude, info[i].latitude]},
@@ -54,10 +55,16 @@
                         "marker-size": "medium",
                         "marker-symbol": "beer",
                         title: info[i].name,
-                        description: info[i].address + " " + happiness
+                        description: addy + " " + happiness
                       }
           });
         }
+      }
+
+      function addy_obvs(address){
+        var long_addy = new Array();
+       long_addy = address.split(",", 1);
+        return long_addy[0];
       }
 
       function happyTimes(stuff){
@@ -65,7 +72,7 @@
        var happiness = '';
           for (i in stuff){
             var deals = bargainGetter(stuff[i].bargains);
-            happiness += "<br />" + stuff[i].days + " " + stuff[i].start_time + " - " + stuff[i].end_time + "<br />" + deals + "<br />";
+            happiness += "<br />" + stuff[i].days + " " + stuff[i].start_time + " - " + stuff[i].end_time + "<br />" + deals;
             }
             return happiness;
       }
