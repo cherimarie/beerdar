@@ -54,7 +54,7 @@
 							<%= bar.name %>
 						</strong></li>
 						<li>
-							<%= obvs_addy(bar.address) %>
+							<%= link_to(obvs_addy(bar.address), "http://maps.google.com/maps?q=#{obvs_addy(bar.address)}, Seattle, WA") %>
 						</li>
 					<% end %> <!--end of unless statement -->
 					<li>
