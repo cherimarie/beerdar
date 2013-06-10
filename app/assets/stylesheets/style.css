@@ -547,6 +547,7 @@ strong { font-weight:bold; }
     padding: .25em;
   }
   .button_area {width: 90%; margin: auto; text-align: center;}
+  .marker_letter {text-decoration: underline;}
 /*
 @media only screen and (max-device-width: 480px) {
   .map {

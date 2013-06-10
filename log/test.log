@@ -261,3 +261,22 @@ Processing by MapController#index as HTML
   [1m[36mLocation Load (0.4ms)[0m  [1mSELECT locations.*, (69.09332411348201 * ABS(locations.latitude - 0.0) * 0.7071067811865475) + (59.836573914187355 * ABS(locations.longitude - 0.0) * 0.7071067811865475) AS distance, CASE WHEN (locations.latitude >= 0.0 AND locations.longitude >= 0.0) THEN 45.0 WHEN (locations.latitude < 0.0 AND locations.longitude >= 0.0) THEN 135.0 WHEN (locations.latitude < 0.0 AND locations.longitude < 0.0) THEN 225.0 WHEN (locations.latitude >= 0.0 AND locations.longitude < 0.0) THEN 315.0 END AS bearing FROM "locations" WHERE (locations.latitude BETWEEN -0.28946356622169594 AND 0.28946356622169594 AND locations.longitude BETWEEN -0.28946356622169594 AND 0.28946356622169594) ORDER BY distance ASC LIMIT 10[0m
 Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.4ms)
   [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+Processing by MapController#index as HTML
+Completed 500 Internal Server Error in 6ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by MapController#index as HTML
+Completed 500 Internal Server Error in 1ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction

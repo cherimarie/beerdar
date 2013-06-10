@@ -3,8 +3,9 @@
 		<h1 class="big_text">BEERDAR</h1>
 	</div>
 	<div id="listy">
-	<h5>Your location is  <%=  Geocoder.address(cookies[:lat_lng].split("|")) %> and you look thirsty! </h5>
+	<h5>Your location is  <%=  Geocoder.address(get_user_location) %> and you look thirsty! </h5>
 
+	
 
 		<% if params[:view_all] == "y" %>
 			<div class="button_area">
@@ -23,34 +24,52 @@
 			<br />
 			<h4> Here's some currently running happy hours near you: </h4>
 		<% end %>
-
+		<div class="static_map">
+			<%= image_tag("http://maps.googleapis.com/maps/api/staticmap?" <<
+										"center=#{get_user_location(true)}" <<
+										"&zoom=#{params[:zoom] || 14}" <<
+										"&size=600x300" <<
+										"&maptype=roadmap" <<
+										"&markers=color:blue%7C#{get_user_location(true)}" <<
+										mass_markers(@list_data) <<
+										"&sensor=false",
+										width: "100%") %>
+		</div>
 	<br />
 	<br />
 
 	<ul>
+	<% marker_index = 64 %>
 	<% @list_data.each_with_index do |bar, index| %>
 		<% bar.happy_hours.each do |hh| %>
-		<% if hh.open_now? || params[:view_all] == "y" %>
+			<% if hh.open_now? || params[:view_all] == "y" %>
 
-			<li>
-				<ul>
-					<li><strong>
-				<%= bar.name %>
-				</strong></li>
 				<li>
-					<%= obvs_addy(bar.address) %>
-				</li><li>
-					<%= pretty_weekdays(hh.days) %> :
-					<%= hh.start_time.strftime('%-l:%M %p') + " - " + hh.end_time.strftime('%-l:%M %p') %>
-				</li><li>
-					<% hh.bargains.each do |barg| %>
-						<%= barg.deal %></li>
-					<% end %>
-				</ul>
-			</li>
-			<br />
-			<% end %>
-		<% end %> <!--end of if statement -->
+					<ul>
+					<% unless bar == @last_bar %>
+						<li><strong>
+							<% if marker_index < 90 %>
+								<span class="marker_letter"><%= marker_index+=1;marker_index.chr %></span>:
+							<% end %>
+							<%= bar.name %>
+						</strong></li>
+						<li>
+							<%= obvs_addy(bar.address) %>
+						</li>
+					<% end %> <!--end of unless statement -->
+					<li>
+						<%= pretty_weekdays(hh.days) %> :
+						<%= hh.start_time.strftime('%-l:%M %p') + " - " + hh.end_time.strftime('%-l:%M %p') %>
+					</li><li>
+						<% hh.bargains.each do |barg| %>
+							<%= barg.deal %></li>
+						<% end %>
+					</ul>
+				</li>
+				<br />
+				<% @last_bar = bar %>
+			<% end %><!--end of if statement -->			
+		<% end %> 
 	<% end %>
 	</ul>
 
