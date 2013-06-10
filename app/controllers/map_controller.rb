@@ -11,13 +11,12 @@ class MapController < ApplicationController
     @list_data = Location.near(get_user_location)
      .includes(:happy_hours)
      .includes(:happy_hours => :bargains)
-
-
   end
+
+  def welcome;end
 
   private
     def get_user_location
-      #return @lat_lng if @lat_lng
       if cookies[:lat_lng]
         lat_lng = cookies[:lat_lng].split("|").map(&:to_f)
       elsif request.location

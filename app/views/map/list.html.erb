@@ -28,7 +28,7 @@
 	<br />
 
 	<ul>
-	<% @list_data.each do |bar| %>
+	<% @list_data.each_with_index do |bar, index| %>
 		<% bar.happy_hours.each do |hh| %>
 		<% if hh.open_now? || params[:view_all] == "y" %>
 

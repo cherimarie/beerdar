@@ -6,11 +6,11 @@ class HappyHour < ActiveRecord::Base
 
   def show_bargains
     if same_bargains
-    begin
-      Bargain.where('happy_hour_id = ?', same_bargains).all
-    rescue ActiveRecord::RecordNotFound
-      [ Bargain.new { |x| x.deal = "same_bargain is not valid happy hour id. Happy Hour not found" } ]
-    end
+      begin
+        Bargain.where('happy_hour_id = ?', same_bargains).all
+      rescue ActiveRecord::RecordNotFound
+        [ Bargain.new { |x| x.deal = "same_bargain is not valid happy hour id. Happy Hour not found" } ]
+      end
     else
       bargains
     end
