@@ -1,0 +1,15 @@
+<div class="list_header">
+    <h1 class="big_text">Welcome to Beerdar!</h1>
+</div>
+<br />
+<div id="listy">
+  <div class="button_area">
+    <%= link_to "List of All Bars", controller: "map", action: "list", :params => { :view_all => "y" } %>
+      <br /><br />
+    <%= link_to "List of All Open Happy Hours", controller: "map", action: "list", :params => { :view_all => "n" } %>
+      <br /><br />
+    <%= link_to "Map of All Bars", controller: "map", action: "index", :params => { :view_all => "y" } %>
+      <br /><br />
+    <%= link_to "Map of Open Happy Hours", controller: "map", action: "index", :params => { :view_all => "n" } %>
+  </div>
+</div>  

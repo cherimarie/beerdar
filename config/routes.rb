@@ -1,6 +1,6 @@
 Beerdar::Application.routes.draw do
   get "map/index"
-  root :to => 'map#index'
+  root :to => 'map#welcome'
   get "map/list"
 
 
